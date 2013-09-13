@@ -33,4 +33,14 @@ require([
     window.EmptyNS = {};
     window.EmptyNS.Router = new Router();
     Backbone.history.start();
+	function appStart(store) {
+	  TT.api.get('v1/me').done(fetchStoreProducts).fail(genericError);
+	}
+
+	function fetchStoreProducts(store) {
+	  TT.api.get('v1/stores/' + store.id + '/products')
+	    .done(listProductImages)
+	    .fail(genericError);
+	}
+
 });

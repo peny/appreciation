@@ -54,9 +54,9 @@ module.exports = function (grunt) {
         },
         connect: {
             options: {
-                port: 9000,
+                port: 8080,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '162.209.81.76'
             },
             livereload: {
                 options: {
@@ -89,11 +89,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        open: {
-            server: {
-                path: 'http://localhost:<%= connect.options.port %>'
-            }
-        },
         clean: {
             dist: ['.tmp', '<%= yeoman.dist %>/*'],
             server: '.tmp'
@@ -108,14 +103,6 @@ module.exports = function (grunt) {
                 '!<%= yeoman.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
-        },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
-            }
         },
         coffee: {
             dist: {
@@ -271,7 +258,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
@@ -282,7 +269,6 @@ module.exports = function (grunt) {
             'compass:server',
             'livereload-start',
             'connect:livereload',
-            'open',
             'watch'
         ]);
     });
@@ -294,7 +280,6 @@ module.exports = function (grunt) {
         'jst',
         'compass',
         'connect:test',
-        'mocha'
     ]);
 
     grunt.registerTask('build', [
