@@ -24,20 +24,6 @@
 
     <!-- Your Own JavaScript -->
     <!--<script src="app.js"></script>-->
-<script>
-(function() {
-  function appStart(store) {
-    alert("Application started!");
-  }
-
-  function genericError() {
-    console.error('Something went wrong');
-  }
-
-  TT.native.init()
-    .done(appStart)
-    .fail(genericError);
-});
-</script>
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
   </body>
 </html>
