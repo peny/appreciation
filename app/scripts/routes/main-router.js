@@ -10,9 +10,11 @@ define([
     var MainRouter = Backbone.Router.extend({
         routes: {
             '': 'showMain',
+            '/': 'showMain',
         },
 
         showMain: function(){
+console.log('router sow main');
             var _this = this;
             _this.renderBase().
             renderMain();

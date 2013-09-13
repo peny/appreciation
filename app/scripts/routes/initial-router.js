@@ -11,6 +11,7 @@ define([
 
         initialize: function(){
             new MainRouter();
+console.log('router init');
         },
 
         routes: {
