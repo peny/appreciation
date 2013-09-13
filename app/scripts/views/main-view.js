@@ -24,6 +24,10 @@ define([
         render: function(){
             var _this = this;
             var context = {
+		message: "Hello!123123",
+		product: {
+			title: "cool"
+		}
             };
             var html = _this.template(context);
             _this.$el.html(html);
