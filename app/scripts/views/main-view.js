@@ -10,7 +10,7 @@ define([
 
     var MainView = Backbone.View.extend({
 
-        el: '.main-content',
+        el: '.app-container',
 
         template: JST['app/scripts/templates/main.ejs'],
 
@@ -18,6 +18,7 @@ define([
         },
 
         initialize: function(){
+		console.log('init main');
         },
 
         render: function(){
@@ -26,6 +27,7 @@ define([
             };
             var html = _this.template(context);
             _this.$el.html(html);
+
         }
     });
 
