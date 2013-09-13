@@ -19,7 +19,6 @@ define([
 
         initialize: function(){
 var _this = this;
-console.log('init')
 
 },
 
