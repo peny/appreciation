@@ -33,5 +33,4 @@ require([
 	GLOBAL.router = new Router();
     Backbone.history.start();
 	GLOBAL.router.navigate('#',{trigger: true});
-
 });
