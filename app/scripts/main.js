@@ -30,7 +30,17 @@ require([
     'backbone',
     'routes/initial-router'
 ], function (Backbone, Router) {
-	GLOBAL.router = new Router();
-    Backbone.history.start();
-	GLOBAL.router.navigate('#',{trigger: true});
+	TT.native.init()
+    .done(function() {
+        TT.api.get('v1/me')
+        .done(function(store){
+            GLOBAL.router = new Router();
+            GLOBAL.storeId = store.id;
+            GLOBAL.storeDashboardUrl = store.dashboard_url;
+            Backbone.history.start();
+            GLOBAL.router.navigate('#',{trigger: true});
+            GLOBAL.accessToken = TT.api.accessToken;
+        }).fail(console.error('TT broke!'));
+    }).fail(console.error('TT broke!'));
+
 });

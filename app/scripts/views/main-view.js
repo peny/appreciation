@@ -4,7 +4,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates'
+    'templates',
+    'vendor/bootstrap.file-input'
 ], function ($, _, Backbone, JST) {
         'use strict';
 
@@ -19,32 +20,38 @@ define([
 
             initialize: function(){
                 var _this = this;
-                TT.native.init()
-                .done(_this.appStart)
-                .fail(_this.genericError);
+                _this.appStart();
+            },
+
+            appStart: function(){
+                var _this = this;
 
             },
 
-            appStart: function(store){
+            getStoreId: function(store){
                 var _this = this;
-            },
-
-            fetchStoreProducts: function(products){
-                var _this = this;
-                console.log('products',products);
+                _this.storeId = store.id;
             },
 
             genericError: function(r,e,s){
-                console.log('genericERRROR: ', r,e,s);
+                console.log('genericError: ', r,e,s);
             },
 
             render: function(){
                 var _this = this;
+
                 var context = {
-                    title: 'Appreciate'
+                    title: 'Appreciate',
+                    accessToken: TT.api.accessToken,
+                    storeid: GLOBAL.storeId,
+                    storedashboardurl: GLOBAL.storeDashboardUrl
                 };
+                console.log(_this.storeId);
+                
                 var html = _this.template(context);
                 _this.$el.html(html);
+                _this.$el.find('input[type=file]').bootstrapFileInput();
+
             }
         });
 
