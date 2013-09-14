@@ -50,7 +50,6 @@ define([
                 
                 var html = _this.template(context);
                 _this.$el.html(html);
-                _this.$el.find('input[type=file]').bootstrapFileInput();
 
             }
         });

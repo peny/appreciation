@@ -1,32 +1,40 @@
 <header>
   <h1><%= title %></h1>
-  <p>Description...</p>
-    
 </header>
-<!--  -->
+
+<p>Yeah it's prime time, my top back, this pimp game ho. I'm red leather, this cocaine, I'm Rick James ho. I'm bill-dropping Ms. Pac-Man, this pill popping-ass ho. I'm popping too, these blue dolphins need two coffins. All she want is some heel money, all she need is some bill money. He take his time, he counts it out, I weighs it up, that's real money
+Check the neck, check the wrist, them heads turning, that's exorcist.</p>
 <form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" id="testform" class="form-grouped">
   <fieldset>
     <legend>Image</legend>
+    <div class="form-group row">
+        <input type="file" name="images" id="imageUpload" class="btn btn-default imageUpload">
+        <span class="help-block">Please note that...</span>
+        <input type="hidden" name="accesstoken" value="<%= accessToken %>">
+        <input type="hidden" name="storeid" value="<%= storeid %>">
+        <input type="hidden" name="storedashboardurl" value="<%= storedashboardurl %>">
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Appreciations left</legend>
     <div class="form-group">
-      <input type="file" name="images" id="image" class="btn btn-default">
-      <input type="hidden" name="accesstoken" value="<%= accessToken %>">
-      <input type="hidden" name="storeid" value="<%= storeid %>">
-      <input type="hidden" name="storedashboardurl" value="<%= storedashboardurl %>">
+      <p>1 of 5</p>
+      <span class="help-block">This your appreciations left this month. In ... days, they'll reset.</span>
     </div>
-<!--
-    <div class="well">
-      <div class="row">
-        <div class="col-xs-3">
-          <div class="thumbnail removable">
-            <div class="remove" data-toggle="remove"></div>
-            <img src="https://lorempixel.com/300/300">
-          </div>
-        </div>
-      </div>
-    </div>
--->
   </fieldset>
   <div class="form-actions">
+    <a class="btn btn-link">Cancel</a>
     <button type="submit" class="btn btn-primary">Send</button>
   </div>
 </form>
+
+
+<br>
+<hr>
+<div class="row">
+  <div class="col-sm-8">
+    <h1>Done!</h1>
+    <p>We've received your appreciation request. As soon as it's done, we'll let you know!</p>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
