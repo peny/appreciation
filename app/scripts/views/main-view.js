@@ -4,7 +4,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates',
+    'templates'
 ], function ($, _, Backbone, JST) {
         'use strict';
 
@@ -41,10 +41,7 @@ define([
             render: function(){
                 var _this = this;
                 var context = {
-                    message: 'Hello!123123',
-                    product: {
-                        title: 'cool'
-                    }
+                    title: 'Appreciate'
                 };
                 var html = _this.template(context);
                 _this.$el.html(html);

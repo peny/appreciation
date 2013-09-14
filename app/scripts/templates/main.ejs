@@ -1,1 +1,26 @@
-This is a little better.
+<header>
+  <h1><%= title %></h1>
+</header>
+<form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" class="form-grouped">
+  <fieldset>
+    <legend>Images</legend>
+    <div class="form-group">
+      <input type="file" multiple="multiple" name="images">
+    </div>
+<!--
+    <div class="well">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="thumbnail removable">
+            <div class="remove" data-toggle="remove"></div>
+            <img src="https://lorempixel.com/300/300">
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </fieldset>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Send</button>
+  </div>
+</form>

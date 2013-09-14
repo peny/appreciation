@@ -9,7 +9,8 @@
     "backbone-amd": "~1.0.0",
     "underscore-amd": "~1.4.4",
     "modernizr": "~2.6.2",
-    "fine-uploader": "~3.8.2"
+    "fine-uploader": "~3.8.2",
+    "jquery-file-upload": "~8.8.5"
   },
   "devDependencies": {}
 }
