@@ -3,12 +3,12 @@
   <p>Description...</p>
     
 </header>
-<!-- http://aprc.se:8042/appreciation -->
-<form action="/" enctype="multipart/form-data" id="testform" class="form-grouped">
+<!--  -->
+<form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" id="testform" class="form-grouped">
   <fieldset>
     <legend>Image</legend>
     <div class="form-group">
-      <input type="file" name="images" class="btn btn-default">
+      <input type="file" name="images" id="image" class="btn btn-default">
       <input type="hidden" name="accesstoken" value="<%= accessToken %>">
       <input type="hidden" name="storeid" value="<%= storeid %>">
       <input type="hidden" name="storedashboardurl" value="<%= storedashboardurl %>">
