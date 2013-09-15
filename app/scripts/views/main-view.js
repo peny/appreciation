@@ -50,6 +50,7 @@ define([
                 
                 var html = _this.template(context);
                 _this.$el.html(html);
+                _this.$el.find('#imageUpload').bootstrapFileInput();
 
             }
         });
