@@ -5,7 +5,7 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'vendor/bootstrap.file-input'
+    'file-input'
 ], function ($, _, Backbone, JST) {
         'use strict';
 
@@ -51,7 +51,6 @@ define([
                 var html = _this.template(context);
                 _this.$el.html(html);
                 _this.$el.find('#imageUpload').bootstrapFileInput();
-
             }
         });
 
