@@ -2,13 +2,13 @@
   <h1><%= title %></h1>
 </header>
 
-<p>Description.</p>
+<p>Upload an image to get a appreciation of your products value.</p>
+<p>You'll get an alert in your feed when the appreciation is done!</p>
 <form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" id="testform" class="form-grouped" data-validate>
   <fieldset>
     <legend>Image</legend>
     <div class="form-group row">
         <input type="file" name="images" id="imageUpload" class="btn btn-default imageUpload" required>
-        <span class="help-block">Please note that... stuff will happen...</span>
         <input type="hidden" name="accesstoken" value="<%= accessToken %>">
         <input type="hidden" name="storeid" value="<%= storeid %>">
         <input type="hidden" name="storedashboardurl" value="<%= storedashboardurl %>">
