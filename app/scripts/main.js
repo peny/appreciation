@@ -42,7 +42,6 @@ require([
             Backbone.history.start();
             GLOBAL.router.navigate('#',{trigger: true});
             GLOBAL.accessToken = TT.api.accessToken;
-        }).fail(console.error('TT broke!'));
-    }).fail(console.error('TT broke!'));
-
+        }).fail();
+    }).fail();
 });
