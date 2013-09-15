@@ -16,11 +16,19 @@ define([
             template: JST['app/scripts/templates/main.ejs'],
 
             events: {
+                'click .remove': 'removeImage'
             },
 
             initialize: function(){
                 var _this = this;
                 _this.appStart();
+            },
+
+            removeImage: function() {           
+                var imageUpload = $('#imageUpload');
+
+                imageUpload.replaceWith(imageUpload = imageUpload.clone(true));
+                $('.removable').remove();
             },
 
             appStart: function(){
