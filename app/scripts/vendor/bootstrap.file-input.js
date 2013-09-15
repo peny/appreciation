@@ -90,16 +90,14 @@ $.fn.bootstrapFileInput = function() {
         // fileName = $(this).val().replace('C:\\fakepath\\','');
         fileName = fileName.substring(fileName.lastIndexOf('\\')+1,fileName.length);
       }
-      
+
       $('.well').children().remove();
 
       var oFReader = new FileReader();
       oFReader.readAsDataURL(document.getElementById("imageUpload").files[0]);
 
       oFReader.onload = function (oFREvent) {
-        console.log("ofreader",oFReader);
-        console.log("pic", oFREvent.target.result);
-        $('.well').append('<div class="thumbnail removable"><div class="remove"></div><img src="' + oFREvent.target.result + '" style="width: 267px; height: 200x;""></div>');
+         $('#test').append('<div class="well"><div class="thumbnail removable"><div class="remove"></div><img src="' + oFREvent.target.result + '" style="width: 267px; height: 200x;""></div></div>');
       };
 
 
