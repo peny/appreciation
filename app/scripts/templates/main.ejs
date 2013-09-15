@@ -3,11 +3,11 @@
 </header>
 
 <p>Description.</p>
-<form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" id="testform" class="form-grouped">
+<form method="post" action="http://aprc.se:8042/appreciation" enctype="multipart/form-data" id="testform" class="form-grouped" data-validate>
   <fieldset>
     <legend>Image</legend>
     <div class="form-group row">
-        <input type="file" name="images" id="imageUpload" class="btn btn-default imageUpload">
+        <input type="file" name="images" id="imageUpload" class="btn btn-default imageUpload" required>
         <span class="help-block">Please note that... stuff will happen...</span>
         <input type="hidden" name="accesstoken" value="<%= accessToken %>">
         <input type="hidden" name="storeid" value="<%= storeid %>">
