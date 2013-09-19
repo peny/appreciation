@@ -54,7 +54,6 @@ define([
                 storeid: GLOBAL.storeId,
                 storedashboardurl: GLOBAL.storeDashboardUrl
               };
-              console.log(_this.storeId);
 
               var html = _this.template(context);
               _this.$el.html(html);
