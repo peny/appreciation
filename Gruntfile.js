@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         },
         connect: {
             options: {
-                port: 8080,
+                port: 8088,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: '0.0.0.0'
             },
