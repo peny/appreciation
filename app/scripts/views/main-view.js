@@ -1,4 +1,4 @@
-/*global define*/
+/*global define, TT*/
 
 define([
     'jquery',
@@ -7,59 +7,56 @@ define([
     'templates',
     'file-input'
 ], function ($, _, Backbone, JST) {
-        'use strict';
+    'use strict';
 
-        var MainView = Backbone.View.extend({
+    var MainView = Backbone.View.extend({
 
-            el: '.app-container',
+        el: '.app-container',
 
-            template: JST['app/scripts/templates/main.ejs'],
+        template: JST['app/scripts/templates/main.ejs'],
 
-            events: {
-                'click .remove': 'removeImage'
-            },
+        events: {
+            'click .remove': 'removeImage'
+        },
 
-            initialize: function(){
-                var _this = this;
-                _this.appStart();
-            },
+        initialize: function(){
+            var _this = this;
+            _this.appStart();
+        },
 
-            removeImage: function() {
-              var imageUpload = $('#imageUpload');
-              imageUpload.replaceWith(imageUpload = imageUpload.clone(true));
-              $('.well').remove();
+        removeImage: function() {
+            var imageUpload = $('#imageUpload');
+            imageUpload.replaceWith(imageUpload = imageUpload.clone(true));
+            $('.well').remove();
+        },
 
-            },
+        appStart: function(){
+        },
 
-            appStart: function(){
-              var _this = this;
+        getStoreId: function(store){
+            var _this = this;
+            _this.storeId = store.id;
+        },
 
-            },
+        genericError: function(r,e,s){
+            console.log('genericError: ', r,e,s);
+        },
 
-            getStoreId: function(store){
-              var _this = this;
-              _this.storeId = store.id;
-            },
+        render: function(){
+            var _this = this;
 
-            genericError: function(r,e,s){
-              console.log('genericError: ', r,e,s);
-            },
-
-            render: function(){
-              var _this = this;
-
-              var context = {
+            var context = {
                 title: 'Appreciate',
                 accessToken: TT.api.accessToken,
                 storeid: GLOBAL.storeId,
                 storedashboardurl: GLOBAL.storeDashboardUrl
-              };
+            };
 
-              var html = _this.template(context);
-              _this.$el.html(html);
-              _this.$el.find('#imageUpload').bootstrapFileInput();
-            }
-        });
+            var html = _this.template(context);
+            _this.$el.html(html);
+            _this.$el.find('#imageUpload').bootstrapFileInput();
+        }
+    });
 
-        return MainView;
+    return MainView;
 });

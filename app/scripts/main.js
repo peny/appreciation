@@ -1,4 +1,4 @@
-/*global require*/
+/*global require, TT*/
 'use strict';
 
 require.config({
@@ -17,14 +17,14 @@ require.config({
             deps: ['jquery'],
             exports: 'jquery'
         },
-	'file-input': ['jquery']
+        'file-input': ['jquery']
     },
     paths: {
         jquery: '../bower_components/jquery/jquery',
         backbone: '../bower_components/backbone-amd/backbone',
         underscore: '../bower_components/underscore-amd/underscore',
         bootstrap: 'vendor/bootstrap',
-    	'file-input': 'vendor/bootstrap.file-input'
+        'file-input': 'vendor/bootstrap.file-input'
     }
 });
 
@@ -32,6 +32,7 @@ require([
     'backbone',
     'routes/initial-router'
 ], function (Backbone, Router) {
+    /* jshint camelcase: false */
 	TT.native.init()
     .done(function() {
         TT.api.get('v1/me')
