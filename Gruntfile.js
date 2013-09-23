@@ -147,11 +147,13 @@ module.exports = function (grunt) {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
-                    baseUrl: 'app/scripts',
                     optimize: 'none',
                     paths: {
                         'templates': '../../.tmp/scripts/templates'
                     },
+                    mainConfigFile: 'app/scripts/main.js',
+                    name: 'main',
+                    out: 'build/main.js',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
                     //generateSourceMaps: true,
@@ -292,9 +294,7 @@ module.exports = function (grunt) {
         'requirejs',
         'imagemin',
         'htmlmin',
-        'concat',
         'cssmin',
-        'uglify',
         'copy',
         'usemin'
     ]);
