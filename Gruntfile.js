@@ -153,7 +153,7 @@ module.exports = function (grunt) {
                     },
                     mainConfigFile: 'app/scripts/main.js',
                     name: 'main',
-                    out: 'build/main.js',
+                    out: 'dist/main.js',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
                     //generateSourceMaps: true,
