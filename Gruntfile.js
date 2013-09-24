@@ -153,7 +153,7 @@ module.exports = function (grunt) {
                     },
                     mainConfigFile: 'app/scripts/main.js',
                     name: 'main',
-                    out: 'dist/main.js',
+                    out: 'dist/scripts/main.js',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
                     //generateSourceMaps: true,
@@ -228,6 +228,7 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
+                        'bower_components/requirejs/require.js',
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}'
